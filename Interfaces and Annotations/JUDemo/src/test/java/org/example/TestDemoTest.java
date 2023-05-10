@@ -8,18 +8,18 @@ import java.time.format.DateTimeFormatter;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TestDemoTest {
-
+    LocalDateTime ldt = LocalDateTime.now();
     @Test
     @DisplayName("Correct date format")
     void returnFormattedDate() {
-        LocalDateTime ldt = LocalDateTime.now();
-        assertEquals(DateTimeFormatter.ofPattern("dd/MM/yyyy").format(ldt),TestDemo.returnFormattedDate(ldt));
+        //assertEquals("Today's Date In The Expected Format (dd/MM/yyyy)",TestDemo.returnFormattedDate(ldt)); // Insert today's date
+        assertEquals("10/05/2023",TestDemo.returnFormattedDate(ldt));
     }
 
     @Test
     @DisplayName("Incorrect date format")
     void returnWrongFormat() {
-        LocalDateTime ldt = LocalDateTime.now();
-        assertEquals(DateTimeFormatter.ofPattern("dd/MM/yyyy HH").format(ldt),TestDemo.returnFormattedDate(ldt));
+        //assertEquals("Today's Date In The Expected Format (dd/MM/yyyy)",TestDemo.returnFormattedDate(ldt)); // Insert today's date
+        assertEquals("2023/10/23",TestDemo.returnFormattedDate(ldt));
     }
 }
